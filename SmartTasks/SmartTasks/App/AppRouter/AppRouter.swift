@@ -17,7 +17,7 @@ final class AppRouter {
 
     func start() {
         guard let window = window else { return }
-        // TODO: -  Route to the main view
+        TasksListRouter().showTasksListView(on: window)
     }
 
 }
