@@ -16,6 +16,7 @@
 		DF7ED3A12C12601A00F58555 /* AmsiPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED39F2C12601A00F58555 /* AmsiPro-Regular.otf */; };
 		DF7ED3A22C12601A00F58555 /* AmsiPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED3A02C12601A00F58555 /* AmsiPro-Bold.otf */; };
 		DF7ED3A62C12616700F58555 /* SmartFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3A52C12616700F58555 /* SmartFonts.swift */; };
+		DF7ED3AA2C126D6000F58555 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED3A92C126D6000F58555 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DF7ED39F2C12601A00F58555 /* AmsiPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmsiPro-Regular.otf"; sourceTree = "<group>"; };
 		DF7ED3A02C12601A00F58555 /* AmsiPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmsiPro-Bold.otf"; sourceTree = "<group>"; };
 		DF7ED3A52C12616700F58555 /* SmartFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFonts.swift; sourceTree = "<group>"; };
+		DF7ED3A92C126D6000F58555 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				DF7ED39E2C125FD500F58555 /* Fonts */,
 				DF7ED36F2C12591100F58555 /* Assets.xcassets */,
+				DF7ED3A92C126D6000F58555 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 		DF7ED39D2C125DAB00F58555 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3A82C126B2E00F58555 /* New Group */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -178,6 +182,7 @@
 		DF7ED3A32C12614C00F58555 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3A72C126AF500F58555 /* Extensions */,
 				DF7ED3A42C12615700F58555 /* CustomFonts */,
 			);
 			path = Core;
@@ -189,6 +194,20 @@
 				DF7ED3A52C12616700F58555 /* SmartFonts.swift */,
 			);
 			path = CustomFonts;
+			sourceTree = "<group>";
+		};
+		DF7ED3A72C126AF500F58555 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DF7ED3A82C126B2E00F58555 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF7ED3AA2C126D6000F58555 /* Colors.xcassets in Resources */,
 				DF7ED3A22C12601A00F58555 /* AmsiPro-Bold.otf in Resources */,
 				DF7ED3A12C12601A00F58555 /* AmsiPro-Regular.otf in Resources */,
 				DF7ED3732C12591100F58555 /* LaunchScreen.storyboard in Resources */,
