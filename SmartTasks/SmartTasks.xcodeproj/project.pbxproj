@@ -13,6 +13,8 @@
 		DF7ED3732C12591100F58555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED3712C12591100F58555 /* LaunchScreen.storyboard */; };
 		DF7ED37E2C12591100F58555 /* SmartTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED37D2C12591100F58555 /* SmartTasksTests.swift */; };
 		DF7ED39A2C125C5800F58555 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3992C125C5800F58555 /* AppRouter.swift */; };
+		DF7ED3A12C12601A00F58555 /* AmsiPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED39F2C12601A00F58555 /* AmsiPro-Regular.otf */; };
+		DF7ED3A22C12601A00F58555 /* AmsiPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED3A02C12601A00F58555 /* AmsiPro-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		DF7ED37D2C12591100F58555 /* SmartTasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTasksTests.swift; sourceTree = "<group>"; };
 		DF7ED3832C12591100F58555 /* SmartTasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartTasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7ED3992C125C5800F58555 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		DF7ED39F2C12601A00F58555 /* AmsiPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmsiPro-Regular.otf"; sourceTree = "<group>"; };
+		DF7ED3A02C12601A00F58555 /* AmsiPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmsiPro-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 		DF7ED39E2C125FD500F58555 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3A02C12601A00F58555 /* AmsiPro-Bold.otf */,
+				DF7ED39F2C12601A00F58555 /* AmsiPro-Regular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -270,6 +276,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF7ED3A22C12601A00F58555 /* AmsiPro-Bold.otf in Resources */,
+				DF7ED3A12C12601A00F58555 /* AmsiPro-Regular.otf in Resources */,
 				DF7ED3732C12591100F58555 /* LaunchScreen.storyboard in Resources */,
 				DF7ED3702C12591100F58555 /* Assets.xcassets in Resources */,
 			);
