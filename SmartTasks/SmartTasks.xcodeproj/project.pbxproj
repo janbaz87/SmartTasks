@@ -9,13 +9,9 @@
 /* Begin PBXBuildFile section */
 		DF7ED3672C12591000F58555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3662C12591000F58555 /* AppDelegate.swift */; };
 		DF7ED3692C12591000F58555 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3682C12591000F58555 /* SceneDelegate.swift */; };
-		DF7ED36B2C12591000F58555 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED36A2C12591000F58555 /* ViewController.swift */; };
-		DF7ED36E2C12591000F58555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED36C2C12591000F58555 /* Main.storyboard */; };
 		DF7ED3702C12591100F58555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED36F2C12591100F58555 /* Assets.xcassets */; };
 		DF7ED3732C12591100F58555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED3712C12591100F58555 /* LaunchScreen.storyboard */; };
 		DF7ED37E2C12591100F58555 /* SmartTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED37D2C12591100F58555 /* SmartTasksTests.swift */; };
-		DF7ED3882C12591100F58555 /* SmartTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3872C12591100F58555 /* SmartTasksUITests.swift */; };
-		DF7ED38A2C12591100F58555 /* SmartTasksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3892C12591100F58555 /* SmartTasksUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +35,12 @@
 		DF7ED3632C12591000F58555 /* SmartTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7ED3662C12591000F58555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7ED3682C12591000F58555 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DF7ED36A2C12591000F58555 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DF7ED36D2C12591000F58555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF7ED36F2C12591100F58555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF7ED3722C12591100F58555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF7ED3742C12591100F58555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF7ED3792C12591100F58555 /* SmartTasksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartTasksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7ED37D2C12591100F58555 /* SmartTasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTasksTests.swift; sourceTree = "<group>"; };
 		DF7ED3832C12591100F58555 /* SmartTasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartTasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF7ED3872C12591100F58555 /* SmartTasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTasksUITests.swift; sourceTree = "<group>"; };
-		DF7ED3892C12591100F58555 /* SmartTasksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTasksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +73,6 @@
 			children = (
 				DF7ED3652C12591000F58555 /* SmartTasks */,
 				DF7ED37C2C12591100F58555 /* SmartTasksTests */,
-				DF7ED3862C12591100F58555 /* SmartTasksUITests */,
 				DF7ED3642C12591000F58555 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,11 +90,8 @@
 		DF7ED3652C12591000F58555 /* SmartTasks */ = {
 			isa = PBXGroup;
 			children = (
-				DF7ED3662C12591000F58555 /* AppDelegate.swift */,
-				DF7ED3682C12591000F58555 /* SceneDelegate.swift */,
-				DF7ED36A2C12591000F58555 /* ViewController.swift */,
-				DF7ED36C2C12591000F58555 /* Main.storyboard */,
-				DF7ED36F2C12591100F58555 /* Assets.xcassets */,
+				DF7ED3972C125AB600F58555 /* Resources */,
+				DF7ED3962C125A9800F58555 /* App */,
 				DF7ED3712C12591100F58555 /* LaunchScreen.storyboard */,
 				DF7ED3742C12591100F58555 /* Info.plist */,
 			);
@@ -118,13 +106,21 @@
 			path = SmartTasksTests;
 			sourceTree = "<group>";
 		};
-		DF7ED3862C12591100F58555 /* SmartTasksUITests */ = {
+		DF7ED3962C125A9800F58555 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				DF7ED3872C12591100F58555 /* SmartTasksUITests.swift */,
-				DF7ED3892C12591100F58555 /* SmartTasksUITestsLaunchTests.swift */,
+				DF7ED3662C12591000F58555 /* AppDelegate.swift */,
+				DF7ED3682C12591000F58555 /* SceneDelegate.swift */,
 			);
-			path = SmartTasksUITests;
+			path = App;
+			sourceTree = "<group>";
+		};
+		DF7ED3972C125AB600F58555 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED36F2C12591100F58555 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +229,6 @@
 			files = (
 				DF7ED3732C12591100F58555 /* LaunchScreen.storyboard in Resources */,
 				DF7ED3702C12591100F58555 /* Assets.xcassets in Resources */,
-				DF7ED36E2C12591000F58555 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF7ED36B2C12591000F58555 /* ViewController.swift in Sources */,
 				DF7ED3672C12591000F58555 /* AppDelegate.swift in Sources */,
 				DF7ED3692C12591000F58555 /* SceneDelegate.swift in Sources */,
 			);
@@ -276,8 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF7ED3882C12591100F58555 /* SmartTasksUITests.swift in Sources */,
-				DF7ED38A2C12591100F58555 /* SmartTasksUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +289,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DF7ED36C2C12591000F58555 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF7ED36D2C12591000F58555 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DF7ED3712C12591100F58555 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
