@@ -12,6 +12,7 @@
 		DF7ED3702C12591100F58555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED36F2C12591100F58555 /* Assets.xcassets */; };
 		DF7ED3732C12591100F58555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED3712C12591100F58555 /* LaunchScreen.storyboard */; };
 		DF7ED37E2C12591100F58555 /* SmartTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED37D2C12591100F58555 /* SmartTasksTests.swift */; };
+		DF7ED39A2C125C5800F58555 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3992C125C5800F58555 /* AppRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		DF7ED3792C12591100F58555 /* SmartTasksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartTasksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7ED37D2C12591100F58555 /* SmartTasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTasksTests.swift; sourceTree = "<group>"; };
 		DF7ED3832C12591100F58555 /* SmartTasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartTasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF7ED3992C125C5800F58555 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		DF7ED3962C125A9800F58555 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3982C125C3300F58555 /* AppRouter */,
 				DF7ED3662C12591000F58555 /* AppDelegate.swift */,
 				DF7ED3682C12591000F58555 /* SceneDelegate.swift */,
 			);
@@ -121,6 +124,14 @@
 				DF7ED36F2C12591100F58555 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DF7ED3982C125C3300F58555 /* AppRouter */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3992C125C5800F58555 /* AppRouter.swift */,
+			);
+			path = AppRouter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 			files = (
 				DF7ED3672C12591000F58555 /* AppDelegate.swift in Sources */,
 				DF7ED3692C12591000F58555 /* SceneDelegate.swift in Sources */,
+				DF7ED39A2C125C5800F58555 /* AppRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
