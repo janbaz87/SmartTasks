@@ -17,6 +17,11 @@
 		DF7ED3A22C12601A00F58555 /* AmsiPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED3A02C12601A00F58555 /* AmsiPro-Bold.otf */; };
 		DF7ED3A62C12616700F58555 /* SmartFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3A52C12616700F58555 /* SmartFonts.swift */; };
 		DF7ED3AA2C126D6000F58555 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED3A92C126D6000F58555 /* Colors.xcassets */; };
+		DF7ED3B72C12739100F58555 /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3B62C12739100F58555 /* TasksListViewController.swift */; };
+		DF7ED3B92C1273B300F58555 /* TasksListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3B82C1273B300F58555 /* TasksListInteractor.swift */; };
+		DF7ED3BB2C1273CA00F58555 /* TasksListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3BA2C1273CA00F58555 /* TasksListPresenter.swift */; };
+		DF7ED3BD2C1273DD00F58555 /* TasksListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3BC2C1273DD00F58555 /* TasksListRouter.swift */; };
+		DF7ED3BF2C1273F100F58555 /* TasksListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3BE2C1273F100F58555 /* TasksListBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		DF7ED3A02C12601A00F58555 /* AmsiPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmsiPro-Bold.otf"; sourceTree = "<group>"; };
 		DF7ED3A52C12616700F58555 /* SmartFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFonts.swift; sourceTree = "<group>"; };
 		DF7ED3A92C126D6000F58555 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		DF7ED3B62C12739100F58555 /* TasksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewController.swift; sourceTree = "<group>"; };
+		DF7ED3B82C1273B300F58555 /* TasksListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListInteractor.swift; sourceTree = "<group>"; };
+		DF7ED3BA2C1273CA00F58555 /* TasksListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListPresenter.swift; sourceTree = "<group>"; };
+		DF7ED3BC2C1273DD00F58555 /* TasksListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListRouter.swift; sourceTree = "<group>"; };
+		DF7ED3BE2C1273F100F58555 /* TasksListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +110,10 @@
 		DF7ED3652C12591000F58555 /* SmartTasks */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3962C125A9800F58555 /* App */,
 				DF7ED3A32C12614C00F58555 /* Core */,
 				DF7ED39B2C125D8F00F58555 /* Modules */,
 				DF7ED3972C125AB600F58555 /* Resources */,
-				DF7ED3962C125A9800F58555 /* App */,
 				DF7ED3712C12591100F58555 /* LaunchScreen.storyboard */,
 				DF7ED3742C12591100F58555 /* Info.plist */,
 			);
@@ -165,7 +175,7 @@
 		DF7ED39D2C125DAB00F58555 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				DF7ED3A82C126B2E00F58555 /* New Group */,
+				DF7ED3A82C126B2E00F58555 /* TasksList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -203,11 +213,56 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		DF7ED3A82C126B2E00F58555 /* New Group */ = {
+		DF7ED3A82C126B2E00F58555 /* TasksList */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3B52C12733C00F58555 /* Router */,
+				DF7ED3B42C12733400F58555 /* Presenter */,
+				DF7ED3B32C12732200F58555 /* Interactor */,
+				DF7ED3B22C12731900F58555 /* View */,
+				DF7ED3B02C12730100F58555 /* Builder */,
 			);
-			path = "New Group";
+			path = TasksList;
+			sourceTree = "<group>";
+		};
+		DF7ED3B02C12730100F58555 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3BE2C1273F100F58555 /* TasksListBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		DF7ED3B22C12731900F58555 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3B62C12739100F58555 /* TasksListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF7ED3B32C12732200F58555 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3B82C1273B300F58555 /* TasksListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		DF7ED3B42C12733400F58555 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3BA2C1273CA00F58555 /* TasksListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DF7ED3B52C12733C00F58555 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3BC2C1273DD00F58555 /* TasksListRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,8 +400,13 @@
 			files = (
 				DF7ED3A62C12616700F58555 /* SmartFonts.swift in Sources */,
 				DF7ED3672C12591000F58555 /* AppDelegate.swift in Sources */,
+				DF7ED3B72C12739100F58555 /* TasksListViewController.swift in Sources */,
+				DF7ED3BD2C1273DD00F58555 /* TasksListRouter.swift in Sources */,
+				DF7ED3BB2C1273CA00F58555 /* TasksListPresenter.swift in Sources */,
 				DF7ED3692C12591000F58555 /* SceneDelegate.swift in Sources */,
 				DF7ED39A2C125C5800F58555 /* AppRouter.swift in Sources */,
+				DF7ED3BF2C1273F100F58555 /* TasksListBuilder.swift in Sources */,
+				DF7ED3B92C1273B300F58555 /* TasksListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
