@@ -15,6 +15,7 @@
 		DF7ED39A2C125C5800F58555 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3992C125C5800F58555 /* AppRouter.swift */; };
 		DF7ED3A12C12601A00F58555 /* AmsiPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED39F2C12601A00F58555 /* AmsiPro-Regular.otf */; };
 		DF7ED3A22C12601A00F58555 /* AmsiPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED3A02C12601A00F58555 /* AmsiPro-Bold.otf */; };
+		DF7ED3A62C12616700F58555 /* SmartFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3A52C12616700F58555 /* SmartFonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DF7ED3992C125C5800F58555 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		DF7ED39F2C12601A00F58555 /* AmsiPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmsiPro-Regular.otf"; sourceTree = "<group>"; };
 		DF7ED3A02C12601A00F58555 /* AmsiPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmsiPro-Bold.otf"; sourceTree = "<group>"; };
+		DF7ED3A52C12616700F58555 /* SmartFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		DF7ED3652C12591000F58555 /* SmartTasks */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3A32C12614C00F58555 /* Core */,
 				DF7ED39B2C125D8F00F58555 /* Modules */,
 				DF7ED3972C125AB600F58555 /* Resources */,
 				DF7ED3962C125A9800F58555 /* App */,
@@ -170,6 +173,22 @@
 				DF7ED39F2C12601A00F58555 /* AmsiPro-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DF7ED3A32C12614C00F58555 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3A42C12615700F58555 /* CustomFonts */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DF7ED3A42C12615700F58555 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3A52C12616700F58555 /* SmartFonts.swift */,
+			);
+			path = CustomFonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF7ED3A62C12616700F58555 /* SmartFonts.swift in Sources */,
 				DF7ED3672C12591000F58555 /* AppDelegate.swift in Sources */,
 				DF7ED3692C12591000F58555 /* SceneDelegate.swift in Sources */,
 				DF7ED39A2C125C5800F58555 /* AppRouter.swift in Sources */,
@@ -478,11 +498,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3H3S8BH6MC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartTasks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -506,11 +526,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3H3S8BH6MC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartTasks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
