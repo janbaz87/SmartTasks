@@ -19,10 +19,9 @@ class TasksListBuilder: TasksListBuildable {
             interactor: interactor,
             router: router
         )
+        interactor.output = presenter
         let view = TasksListViewController(presenter: presenter)
         presenter.view = view
-        interactor.output = presenter
-
         return view
     }
 }
