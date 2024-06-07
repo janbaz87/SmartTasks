@@ -24,6 +24,10 @@
 		DF7ED3BF2C1273F100F58555 /* TasksListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3BE2C1273F100F58555 /* TasksListBuilder.swift */; };
 		DF7ED3C22C13203100F58555 /* SmartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3C12C13203100F58555 /* SmartColors.swift */; };
 		DF7ED3C52C1335D100F58555 /* SmartUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3C42C1335D100F58555 /* SmartUI.swift */; };
+		DF7ED3C82C137DE700F58555 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3C72C137DE700F58555 /* EmptyView.swift */; };
+		DF7ED3CA2C138F3000F58555 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3C92C138F3000F58555 /* UIStackView+Extensions.swift */; };
+		DF7ED3CE2C13919B00F58555 /* SmartImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3CD2C13919B00F58555 /* SmartImages.swift */; };
+		DF7ED3D12C1392BB00F58555 /* ImageProvideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3D02C1392BB00F58555 /* ImageProvideable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		DF7ED3BE2C1273F100F58555 /* TasksListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListBuilder.swift; sourceTree = "<group>"; };
 		DF7ED3C12C13203100F58555 /* SmartColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartColors.swift; sourceTree = "<group>"; };
 		DF7ED3C42C1335D100F58555 /* SmartUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartUI.swift; sourceTree = "<group>"; };
+		DF7ED3C72C137DE700F58555 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		DF7ED3C92C138F3000F58555 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		DF7ED3CD2C13919B00F58555 /* SmartImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartImages.swift; sourceTree = "<group>"; };
+		DF7ED3D02C1392BB00F58555 /* ImageProvideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvideable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +122,10 @@
 		DF7ED3652C12591000F58555 /* SmartTasks */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3CB2C13917E00F58555 /* Sources */,
 				DF7ED3962C125A9800F58555 /* App */,
 				DF7ED3A32C12614C00F58555 /* Core */,
-				DF7ED39B2C125D8F00F58555 /* Modules */,
+				DF7ED39D2C125DAB00F58555 /* Scenes */,
 				DF7ED3972C125AB600F58555 /* Resources */,
 				DF7ED3712C12591100F58555 /* LaunchScreen.storyboard */,
 				DF7ED3742C12591100F58555 /* Info.plist */,
@@ -160,22 +169,6 @@
 			path = AppRouter;
 			sourceTree = "<group>";
 		};
-		DF7ED39B2C125D8F00F58555 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				DF7ED39C2C125D9A00F58555 /* SmartTasks */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		DF7ED39C2C125D9A00F58555 /* SmartTasks */ = {
-			isa = PBXGroup;
-			children = (
-				DF7ED39D2C125DAB00F58555 /* Scenes */,
-			);
-			path = SmartTasks;
-			sourceTree = "<group>";
-		};
 		DF7ED39D2C125DAB00F58555 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +189,7 @@
 		DF7ED3A32C12614C00F58555 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3CF2C1392A000F58555 /* Protocols */,
 				DF7ED3C32C1335AE00F58555 /* SmartUI */,
 				DF7ED3C02C13201200F58555 /* SmartColors */,
 				DF7ED3A72C126AF500F58555 /* Extensions */,
@@ -215,6 +209,7 @@
 		DF7ED3A72C126AF500F58555 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3C92C138F3000F58555 /* UIStackView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,6 +237,7 @@
 		DF7ED3B22C12731900F58555 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3C62C137D7A00F58555 /* EmptyView */,
 				DF7ED3B62C12739100F58555 /* TasksListViewController.swift */,
 			);
 			path = View;
@@ -285,6 +281,38 @@
 				DF7ED3C42C1335D100F58555 /* SmartUI.swift */,
 			);
 			path = SmartUI;
+			sourceTree = "<group>";
+		};
+		DF7ED3C62C137D7A00F58555 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3C72C137DE700F58555 /* EmptyView.swift */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
+		DF7ED3CB2C13917E00F58555 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3CC2C13918800F58555 /* Images */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DF7ED3CC2C13918800F58555 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3CD2C13919B00F58555 /* SmartImages.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		DF7ED3CF2C1392A000F58555 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3D02C1392BB00F58555 /* ImageProvideable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,9 +450,13 @@
 			files = (
 				DF7ED3A62C12616700F58555 /* SmartFonts.swift in Sources */,
 				DF7ED3C22C13203100F58555 /* SmartColors.swift in Sources */,
+				DF7ED3D12C1392BB00F58555 /* ImageProvideable.swift in Sources */,
+				DF7ED3CA2C138F3000F58555 /* UIStackView+Extensions.swift in Sources */,
 				DF7ED3672C12591000F58555 /* AppDelegate.swift in Sources */,
 				DF7ED3B72C12739100F58555 /* TasksListViewController.swift in Sources */,
+				DF7ED3C82C137DE700F58555 /* EmptyView.swift in Sources */,
 				DF7ED3BD2C1273DD00F58555 /* TasksListRouter.swift in Sources */,
+				DF7ED3CE2C13919B00F58555 /* SmartImages.swift in Sources */,
 				DF7ED3BB2C1273CA00F58555 /* TasksListPresenter.swift in Sources */,
 				DF7ED3692C12591000F58555 /* SceneDelegate.swift in Sources */,
 				DF7ED39A2C125C5800F58555 /* AppRouter.swift in Sources */,
@@ -607,8 +639,7 @@
 				INFOPLIST_FILE = SmartTasks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -635,8 +666,7 @@
 				INFOPLIST_FILE = SmartTasks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
