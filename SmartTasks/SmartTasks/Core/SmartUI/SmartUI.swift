@@ -20,7 +20,7 @@ enum SmartUI {
     }
 
     enum Size {
-        static let title: CGFloat = 15
+        static let title: CGFloat = 25
         static let title1: CGFloat = 10
     }
 }
