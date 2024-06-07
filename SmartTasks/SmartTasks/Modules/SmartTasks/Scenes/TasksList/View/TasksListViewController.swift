@@ -25,7 +25,7 @@ class TasksListViewController: UIViewController, TasksListView {
     // MARK: - Lifcyle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .appBackground
         // Do any additional setup after loading the view.
     }
 
