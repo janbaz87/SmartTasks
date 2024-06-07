@@ -23,6 +23,7 @@
 		DF7ED3BD2C1273DD00F58555 /* TasksListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3BC2C1273DD00F58555 /* TasksListRouter.swift */; };
 		DF7ED3BF2C1273F100F58555 /* TasksListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3BE2C1273F100F58555 /* TasksListBuilder.swift */; };
 		DF7ED3C22C13203100F58555 /* SmartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3C12C13203100F58555 /* SmartColors.swift */; };
+		DF7ED3C52C1335D100F58555 /* SmartUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3C42C1335D100F58555 /* SmartUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		DF7ED3BC2C1273DD00F58555 /* TasksListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListRouter.swift; sourceTree = "<group>"; };
 		DF7ED3BE2C1273F100F58555 /* TasksListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListBuilder.swift; sourceTree = "<group>"; };
 		DF7ED3C12C13203100F58555 /* SmartColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartColors.swift; sourceTree = "<group>"; };
+		DF7ED3C42C1335D100F58555 /* SmartUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		DF7ED3A32C12614C00F58555 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3C32C1335AE00F58555 /* SmartUI */,
 				DF7ED3C02C13201200F58555 /* SmartColors */,
 				DF7ED3A72C126AF500F58555 /* Extensions */,
 				DF7ED3A42C12615700F58555 /* CustomFonts */,
@@ -274,6 +277,14 @@
 				DF7ED3C12C13203100F58555 /* SmartColors.swift */,
 			);
 			path = SmartColors;
+			sourceTree = "<group>";
+		};
+		DF7ED3C32C1335AE00F58555 /* SmartUI */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3C42C1335D100F58555 /* SmartUI.swift */,
+			);
+			path = SmartUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +428,7 @@
 				DF7ED3BB2C1273CA00F58555 /* TasksListPresenter.swift in Sources */,
 				DF7ED3692C12591000F58555 /* SceneDelegate.swift in Sources */,
 				DF7ED39A2C125C5800F58555 /* AppRouter.swift in Sources */,
+				DF7ED3C52C1335D100F58555 /* SmartUI.swift in Sources */,
 				DF7ED3BF2C1273F100F58555 /* TasksListBuilder.swift in Sources */,
 				DF7ED3B92C1273B300F58555 /* TasksListInteractor.swift in Sources */,
 			);
