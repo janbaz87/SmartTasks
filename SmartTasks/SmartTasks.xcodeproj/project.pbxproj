@@ -22,6 +22,7 @@
 		DF7ED3BB2C1273CA00F58555 /* TasksListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3BA2C1273CA00F58555 /* TasksListPresenter.swift */; };
 		DF7ED3BD2C1273DD00F58555 /* TasksListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3BC2C1273DD00F58555 /* TasksListRouter.swift */; };
 		DF7ED3BF2C1273F100F58555 /* TasksListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3BE2C1273F100F58555 /* TasksListBuilder.swift */; };
+		DF7ED3C22C13203100F58555 /* SmartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3C12C13203100F58555 /* SmartColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		DF7ED3BA2C1273CA00F58555 /* TasksListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListPresenter.swift; sourceTree = "<group>"; };
 		DF7ED3BC2C1273DD00F58555 /* TasksListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListRouter.swift; sourceTree = "<group>"; };
 		DF7ED3BE2C1273F100F58555 /* TasksListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListBuilder.swift; sourceTree = "<group>"; };
+		DF7ED3C12C13203100F58555 /* SmartColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		DF7ED3A32C12614C00F58555 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DF7ED3C02C13201200F58555 /* SmartColors */,
 				DF7ED3A72C126AF500F58555 /* Extensions */,
 				DF7ED3A42C12615700F58555 /* CustomFonts */,
 			);
@@ -263,6 +266,14 @@
 				DF7ED3BC2C1273DD00F58555 /* TasksListRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		DF7ED3C02C13201200F58555 /* SmartColors */ = {
+			isa = PBXGroup;
+			children = (
+				DF7ED3C12C13203100F58555 /* SmartColors.swift */,
+			);
+			path = SmartColors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF7ED3A62C12616700F58555 /* SmartFonts.swift in Sources */,
+				DF7ED3C22C13203100F58555 /* SmartColors.swift in Sources */,
 				DF7ED3672C12591000F58555 /* AppDelegate.swift in Sources */,
 				DF7ED3B72C12739100F58555 /* TasksListViewController.swift in Sources */,
 				DF7ED3BD2C1273DD00F58555 /* TasksListRouter.swift in Sources */,
