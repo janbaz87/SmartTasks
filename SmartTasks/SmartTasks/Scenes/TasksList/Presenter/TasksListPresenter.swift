@@ -32,18 +32,22 @@ class TasksListPresenter: TasksListPresentation {
     func viewDidLoad() {
         fetchTasksList()
     }
-
-    func fetchTasksList() {
-        interactor.fetchCurrenciesList()
-    }
 }
 
 // MARK: - TasksListInteractorOutputing
 extension TasksListPresenter: TasksListInteractorOutputing {
-
     @MainActor
     func successfullyFetchedTasks(tasks: Tasks?) {
         guard let tasks = tasks else { return }
         print(tasks)
     }
 }
+
+// MARK: - Private
+private extension TasksListPresenter {
+    func fetchTasksList() {
+        interactor.fetchTasksList()
+    }
+}
+
+
