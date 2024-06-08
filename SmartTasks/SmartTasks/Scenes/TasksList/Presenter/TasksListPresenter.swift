@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol TasksListPresentation {}
+protocol TasksListPresentation {
+    func viewDidLoad()
+}
 
 class TasksListPresenter: TasksListPresentation {
 
@@ -26,6 +28,22 @@ class TasksListPresenter: TasksListPresentation {
     // MARK: - Private
     private let interactor: TasksListInteractorInputing
     private let router: TasksListRouting
+
+    func viewDidLoad() {
+        fetchTasksList()
+    }
+
+    func fetchTasksList() {
+        interactor.fetchCurrenciesList()
+    }
 }
 
-extension TasksListPresenter: TasksListInteractorOutputing {}
+// MARK: - TasksListInteractorOutputing
+extension TasksListPresenter: TasksListInteractorOutputing {
+
+    @MainActor
+    func successfullyFetchedTasks(tasks: Tasks?) {
+        guard let tasks = tasks else { return }
+        print(tasks)
+    }
+}

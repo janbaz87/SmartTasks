@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Networking
 
 protocol TasksListView: AnyObject {}
 
@@ -52,6 +53,7 @@ final class TasksListViewController: UIViewController, TasksListView {
             emptyView.heightAnchor.constraint(equalToConstant: 300),
             emptyView.widthAnchor.constraint(equalToConstant: 300)
         ])
+        presenter.viewDidLoad()
     }
 
     // MARK: - Internal
