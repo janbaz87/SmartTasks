@@ -16,15 +16,15 @@ extension SmartColor {
         return colorWith(name: "smart_background")
     }
 
-    class var red: UIColor {
+    class var appRed: UIColor {
         return colorWith(name: "smart_red")
     }
 
-    class var green: UIColor {
+    class var appGreen: UIColor {
         return colorWith(name: "smart_green")
     }
 
-    class var OffWhite: UIColor {
+    class var appOffWhite: UIColor {
         return colorWith(name: "smart_cream")
     }
 
