@@ -20,7 +20,7 @@ final class TasksService: TasksServiceProviding {
     }
 
     func fetchTasksList() async -> Result<Tasks?, AppError> {
-        let path = CurrencyExchangeEndpoint.tasksList.path
+        let path = TasksListEndpoint.tasksList.path
         let request = TasksListRequest(path: path, parameters: nil)
 
         let result = await networking.request(
