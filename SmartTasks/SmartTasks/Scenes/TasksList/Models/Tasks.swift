@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SmartTask {
+struct SmartTask: Hashable {
     let id: String
     let dueDate: Date?
     let description: String
@@ -36,6 +36,15 @@ struct SmartTask {
 
     }
 
+    // MARK: - Hashable
+    static func == (lhs: SmartTask, rhs: SmartTask) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
 }
 
 struct Tasks {
@@ -46,14 +55,6 @@ struct Tasks {
         for taskDTO in tasksDTO.tasks {
             let task = SmartTask(taskDTO: taskDTO)
             tasks.append(task)
-        }
-        
-        let sortedTasks = tasks.sorted {
-            if $0.targetDate != $1.targetDate {
-                return $0.targetDate < $1.targetDate
-            } else {
-                return $0.priority < $1.priority
-            }
         }
     }
 }
