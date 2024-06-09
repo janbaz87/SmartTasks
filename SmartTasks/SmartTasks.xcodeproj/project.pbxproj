@@ -43,6 +43,9 @@
 		DF6092352C14FB880050C449 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6092342C14FB880050C449 /* UIView+Extensions.swift */; };
 		DF6092372C1501120050C449 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6092362C1501120050C449 /* UIStackView+Extensions.swift */; };
 		DF60923A2C1502BE0050C449 /* VerticalLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6092392C1502BE0050C449 /* VerticalLabelsView.swift */; };
+		DF60923D2C150D250050C449 /* TasksListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60923C2C150D250050C449 /* TasksListDataSource.swift */; };
+		DF6092402C150E450050C449 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60923F2C150E450050C449 /* CollectionViewDataSource.swift */; };
+		DF6092422C1514490050C449 /* UICollectionViewCompositionalLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6092412C1514490050C449 /* UICollectionViewCompositionalLayout+Extensions.swift */; };
 		DF7ED3672C12591000F58555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3662C12591000F58555 /* AppDelegate.swift */; };
 		DF7ED3692C12591000F58555 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3682C12591000F58555 /* SceneDelegate.swift */; };
 		DF7ED3702C12591100F58555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7ED36F2C12591100F58555 /* Assets.xcassets */; };
@@ -146,6 +149,9 @@
 		DF6092342C14FB880050C449 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		DF6092362C1501120050C449 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		DF6092392C1502BE0050C449 /* VerticalLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalLabelsView.swift; sourceTree = "<group>"; };
+		DF60923C2C150D250050C449 /* TasksListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListDataSource.swift; sourceTree = "<group>"; };
+		DF60923F2C150E450050C449 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		DF6092412C1514490050C449 /* UICollectionViewCompositionalLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extensions.swift"; sourceTree = "<group>"; };
 		DF7ED3632C12591000F58555 /* SmartTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7ED3662C12591000F58555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7ED3682C12591000F58555 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -356,6 +362,7 @@
 		DF60921D2C13CCDE0050C449 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				DF60923E2C150E1B0050C449 /* CollectionViewDataSource */,
 				DF60921E2C13CCF50050C449 /* BaseRequest.swift */,
 			);
 			path = Base;
@@ -415,6 +422,22 @@
 				DF6092392C1502BE0050C449 /* VerticalLabelsView.swift */,
 			);
 			path = VerticalLabelsView;
+			sourceTree = "<group>";
+		};
+		DF60923B2C150D050050C449 /* TasksListDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				DF60923C2C150D250050C449 /* TasksListDataSource.swift */,
+			);
+			path = TasksListDataSource;
+			sourceTree = "<group>";
+		};
+		DF60923E2C150E1B0050C449 /* CollectionViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				DF60923F2C150E450050C449 /* CollectionViewDataSource.swift */,
+			);
+			path = CollectionViewDataSource;
 			sourceTree = "<group>";
 		};
 		DF7ED35A2C12590F00F58555 = {
@@ -537,6 +560,7 @@
 				DF60922C2C1473100050C449 /* String+Extensions.swift */,
 				DF6092342C14FB880050C449 /* UIView+Extensions.swift */,
 				DF6092362C1501120050C449 /* UIStackView+Extensions.swift */,
+				DF6092412C1514490050C449 /* UICollectionViewCompositionalLayout+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -544,6 +568,7 @@
 		DF7ED3A82C126B2E00F58555 /* TasksList */ = {
 			isa = PBXGroup;
 			children = (
+				DF60923B2C150D050050C449 /* TasksListDataSource */,
 				DF6092292C13D41C0050C449 /* Models */,
 				DF7ED3B52C12733C00F58555 /* Router */,
 				DF7ED3B42C12733400F58555 /* Presenter */,
@@ -875,8 +900,11 @@
 				DF7ED39A2C125C5800F58555 /* AppRouter.swift in Sources */,
 				DF6092352C14FB880050C449 /* UIView+Extensions.swift in Sources */,
 				DF7ED3C52C1335D100F58555 /* SmartUI.swift in Sources */,
+				DF6092422C1514490050C449 /* UICollectionViewCompositionalLayout+Extensions.swift in Sources */,
 				DF6092222C13CD300050C449 /* AppConfiguration.swift in Sources */,
+				DF60923D2C150D250050C449 /* TasksListDataSource.swift in Sources */,
 				DF7ED3BF2C1273F100F58555 /* TasksListBuilder.swift in Sources */,
+				DF6092402C150E450050C449 /* CollectionViewDataSource.swift in Sources */,
 				DF60922D2C1473100050C449 /* String+Extensions.swift in Sources */,
 				DF60921C2C13CCA90050C449 /* TasksListRequest.swift in Sources */,
 				DF7ED3B92C1273B300F58555 /* TasksListInteractor.swift in Sources */,
