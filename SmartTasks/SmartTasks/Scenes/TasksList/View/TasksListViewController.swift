@@ -8,7 +8,10 @@
 import UIKit
 import Networking
 
-protocol TasksListView: AnyObject {}
+protocol TasksListView: AnyObject {
+    func setTasksListData(tasks: [SmartTask])
+    func showEmptyView()
+}
 
 final class TasksListViewController: UIViewController, TasksListView {
 
@@ -18,7 +21,19 @@ final class TasksListViewController: UIViewController, TasksListView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
+    // MARK: - Views
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: UICollectionViewFlowLayout()
+        )
+        collectionView.backgroundColor = .white
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
+
     private lazy var emptyView: EmptyView = {
         let view = EmptyView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -43,45 +58,32 @@ final class TasksListViewController: UIViewController, TasksListView {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appBackground
-        // Do any additional setup after loading the view.
-
-        view.addSubview(emptyView)
-
-        NSLayoutConstraint.activate([
-            emptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            emptyView.heightAnchor.constraint(equalToConstant: 300),
-            emptyView.widthAnchor.constraint(equalToConstant: 300)
-        ])
         presenter.viewDidLoad()
     }
 
     // MARK: - Internal
     let presenter: TasksListPresentation
 
+    func setTasksListData(tasks: [SmartTask]) {
+        emptyView.removeFromSuperview()
+        collectionViewDataSource.tasks = tasks
+    }
+
+    func showEmptyView() {
+        view.addSubview(emptyView)
+        NSLayoutConstraint.activate([
+            emptyView.topAnchor.constraint(equalTo: view.topAnchor),
+            emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emptyView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+
     // MARK: - Private
-    private func registerCells() {
-//        collectionView.register(
-//            ExchangeRatesCollectionViewCell.self,
-//            forCellWithReuseIdentifier: ExchangeRatesCollectionViewCell.reuseIdentifier
-//        )
-    }
-
-    private func addLeftRightButtons() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: SmartImages.rightArrow, style: .plain, target: self, action: #selector(self.menuAction(_:)))
-
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: SmartImages.leftArrow, style: .plain, target: self, action: #selector(self.searchAction(_:)))
-    }
-
-    @objc 
-    func menuAction(_ sender: UIButton) {
-
-    }
-
-    @objc 
-    func searchAction(_ sender: UIButton) {
-
-    }
+     lazy var collectionViewDataSource = TasksListDataSource(
+        collectionView: collectionView,
+        actionDelegate: self
+    )
 
 }
 
@@ -89,18 +91,47 @@ final class TasksListViewController: UIViewController, TasksListView {
 private extension TasksListViewController {
     func setupUI() {
         title = Constants.Text.title
-        addLeftRightButtons()
+        configureCollectionView()
+        view.addSubview(collectionView)
     }
 
     func configureConstraints() {
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
 
+    func configureCollectionView() {
+        let layout = UICollectionViewCompositionalLayout.listLayout(backgroundColor: .clear)
+        collectionView.collectionViewLayout = layout
+
+        collectionView.dataSource = collectionViewDataSource.dataSource
+        collectionView.delegate = collectionViewDataSource
     }
 }
 
 private extension TasksListViewController {
+
+    private func registerCells() {
+        collectionView.register(
+            TaskCollecCollectionViewCell.self,
+            forCellWithReuseIdentifier: TaskCollecCollectionViewCell.reuseIdentifier
+        )
+    }
+
     enum Constants {
         enum Text {
             static let title: String = "Today"
         }
+    }
+}
+
+extension TasksListViewController: ActionableListView {
+    func didPerformAction(indexPath: IndexPath) {
+       // let task = collectionViewDataSource.getItem(at: indexPath)
+       // presenter.didSelect(currency: curency)
     }
 }
