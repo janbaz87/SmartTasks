@@ -56,5 +56,14 @@ struct Tasks {
             let task = SmartTask(taskDTO: taskDTO)
             tasks.append(task)
         }
+
+        let sortedTasks = tasks.sorted {
+            if $0.targetDate != $1.targetDate {
+                return $0.targetDate < $1.targetDate
+            } else {
+                return $0.priority > $1.priority
+            }
+        }
+        tasks = sortedTasks
     }
 }
