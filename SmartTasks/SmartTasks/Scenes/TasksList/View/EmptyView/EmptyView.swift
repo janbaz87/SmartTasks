@@ -55,18 +55,15 @@ private extension EmptyView {
     func configureConstraints() {
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.padding),
-            imageView.heightAnchor.constraint(equalToConstant: Constants.imageSize),
-            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
+            imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -Constants.padding),
+            imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
         ])
 
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.padding),
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Constants.padding),
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Constants.padding),
-            titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Constants.padding),
-            titleLabel.heightAnchor.constraint(equalToConstant: Constants.titleHeight)
-
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Constants.padding)
         ])
     }
 
