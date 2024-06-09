@@ -22,24 +22,49 @@ class TasksListPresenter: TasksListPresentation {
         self.router = router
     }
 
+    // MARK: - Lifecycle
+    func viewDidLoad() {
+        fetchTasksList()
+    }
+
     // MARK: - Internal
     weak var view: TasksListView?
 
     // MARK: - Private
     private let interactor: TasksListInteractorInputing
     private let router: TasksListRouting
+    private var currentDate = Date()
+    private var groupedTasks = [Date: [SmartTask]]()
 
-    func viewDidLoad() {
-        fetchTasksList()
+    private func tasksFor(date: Date) -> [SmartTask]? {
+        return groupedTasks[date]
+    }
+
+    private func groupTasksByDate(tasks: [SmartTask]) {
+        for task in tasks {
+            let startOfDay = Calendar.current.startOfDay(for: task.targetDate)
+            if groupedTasks[startOfDay] == nil {
+                groupedTasks[startOfDay] = [SmartTask]()
+            }
+            groupedTasks[startOfDay]?.append(task)
+        }
     }
 }
 
 // MARK: - TasksListInteractorOutputing
 extension TasksListPresenter: TasksListInteractorOutputing {
     @MainActor
-    func successfullyFetchedTasks(tasks: Tasks?) {
+    func successfullyFetchedTasks(tasks: [SmartTask]?) {
         guard let tasks = tasks else { return }
         print(tasks)
+        groupTasksByDate(tasks: tasks)
+        DispatchQueue.main.async {
+            if let todaysTasks = self.tasksFor(date: self.currentDate) {
+                self.view?.setTasksListData(tasks: todaysTasks)
+            } else {
+                self.view?.showEmptyView()
+            }
+        }
     }
 }
 
