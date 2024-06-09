@@ -66,6 +66,7 @@
 		DF7ED3C82C137DE700F58555 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3C72C137DE700F58555 /* EmptyView.swift */; };
 		DF7ED3CE2C13919B00F58555 /* SmartImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3CD2C13919B00F58555 /* SmartImages.swift */; };
 		DF7ED3D12C1392BB00F58555 /* ImageProvideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3D02C1392BB00F58555 /* ImageProvideable.swift */; };
+		DFAA1EAD2C16426E0087923F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA1EAC2C16426E0087923F /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		DF7ED3C72C137DE700F58555 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		DF7ED3CD2C13919B00F58555 /* SmartImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartImages.swift; sourceTree = "<group>"; };
 		DF7ED3D02C1392BB00F58555 /* ImageProvideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvideable.swift; sourceTree = "<group>"; };
+		DFAA1EAC2C16426E0087923F /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,6 +563,7 @@
 				DF6092342C14FB880050C449 /* UIView+Extensions.swift */,
 				DF6092362C1501120050C449 /* UIStackView+Extensions.swift */,
 				DF6092412C1514490050C449 /* UICollectionViewCompositionalLayout+Extensions.swift */,
+				DFAA1EAC2C16426E0087923F /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -887,6 +890,7 @@
 				DF6092152C13CB7B0050C449 /* TasksService.swift in Sources */,
 				DF60922B2C13D4390050C449 /* Tasks.swift in Sources */,
 				DF60921A2C13CC1A0050C449 /* TasksListEndPoint.swift in Sources */,
+				DFAA1EAD2C16426E0087923F /* Date+Extensions.swift in Sources */,
 				DF7ED3B72C12739100F58555 /* TasksListViewController.swift in Sources */,
 				DF7ED3C82C137DE700F58555 /* EmptyView.swift in Sources */,
 				DF60921F2C13CCF50050C449 /* BaseRequest.swift in Sources */,
