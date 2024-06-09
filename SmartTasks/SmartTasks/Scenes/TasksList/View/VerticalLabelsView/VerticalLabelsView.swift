@@ -8,12 +8,22 @@
 import UIKit
 
 class VerticalLabelsView: UIView {
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = 5
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
 
     // Title label
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = SmartFont.font(withName: .amsiProRegular, size: 10)
         label.textColor = .gray
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -23,6 +33,7 @@ class VerticalLabelsView: UIView {
         let label = UILabel()
         label.font = SmartFont.font(withName: .amsiProBold, size: 15)
         label.textColor = SmartColor.appRed
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -43,24 +54,27 @@ class VerticalLabelsView: UIView {
         valueLabel.text = value
     }
 
+    func setTextAlignment(to alignment: NSTextAlignment) {
+        titleLabel.textAlignment = alignment
+        valueLabel.textAlignment = alignment
+    }
+
     // Setup the view
     private func setupView() {
         // Add labels to the view
-        addSubview(titleLabel)
-        addSubview(valueLabel)
+        stackView.addArrangedSubviews([titleLabel, valueLabel])
+        addSubview(stackView)
 
         // Setup Auto Layout constraints
         NSLayoutConstraint.activate([
-            // Title label constraints
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: 12),
+            valueLabel.heightAnchor.constraint(equalToConstant: 17),
 
-            // Value label constraints
-            valueLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            valueLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+            // Title label constraints
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
