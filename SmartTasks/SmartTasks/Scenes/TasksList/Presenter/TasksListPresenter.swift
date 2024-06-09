@@ -9,6 +9,8 @@ import UIKit
 
 protocol TasksListPresentation {
     func viewDidLoad()
+    func nextButtonTapped()
+    func previousButtonTapped()
 }
 
 class TasksListPresenter: TasksListPresentation {
@@ -22,13 +24,36 @@ class TasksListPresenter: TasksListPresentation {
         self.router = router
     }
 
-    // MARK: - Lifecycle
+    // MARK: - Internal
+    weak var view: TasksListView?
+
     func viewDidLoad() {
         fetchTasksList()
     }
 
-    // MARK: - Internal
-    weak var view: TasksListView?
+    func nextButtonTapped() {
+        if let nextDate = nextDate(from: Array(groupedTasks.keys), currentDate: currentDate) {
+            currentDate = nextDate
+            reloadUI(for: currentDate)
+        } else {
+            if currentDate < Date() {
+                currentDate = Date()
+                reloadUI(for: currentDate)
+            }
+        }
+    }
+
+    func previousButtonTapped() {
+        if let previousDate = previousDate(from: Array(groupedTasks.keys), currentDate: currentDate) {
+            currentDate = previousDate
+            reloadUI(for: currentDate)
+        } else {
+            if currentDate > Date() {
+                currentDate = Date()
+                reloadUI(for: currentDate)
+            }
+        }
+    }
 
     // MARK: - Private
     private let interactor: TasksListInteractorInputing
@@ -58,11 +83,7 @@ extension TasksListPresenter: TasksListInteractorOutputing {
         guard let tasks = tasks else { return }
         groupTasksByDate(tasks: tasks)
         DispatchQueue.main.async {
-            if let todaysTasks = self.tasksFor(date: self.currentDate) {
-                self.view?.setTasksListData(tasks: todaysTasks)
-            } else {
-                self.view?.showEmptyView()
-            }
+            self.reloadUI(for: self.currentDate)
         }
     }
 }
@@ -71,6 +92,34 @@ extension TasksListPresenter: TasksListInteractorOutputing {
 private extension TasksListPresenter {
     func fetchTasksList() {
         interactor.fetchTasksList()
+    }
+
+    private func nextDate(from dates: [Date], currentDate: Date) -> Date? {
+        let currentDate = currentDate
+        let futureDates = dates.filter { $0 > currentDate }
+        let sortedFutureDates = futureDates.sorted()
+        return sortedFutureDates.first
+    }
+
+    private func previousDate(from dates: [Date], currentDate: Date) -> Date? {
+        let currentDate = currentDate
+        let futureDates = dates.filter { $0 < currentDate }
+        let sortedFutureDates = futureDates.sorted()
+        return sortedFutureDates.last
+    }
+
+    private func updateTitleWith(date: Date) {
+        view?.setTitle(title: date.getFormattedDateString())
+    }
+
+    private func reloadUI(for date: Date) {
+        updateTitleWith(date: currentDate)
+        if let tasks = self.tasksFor(date: date) {
+            view?.setTasksListData(tasks: tasks)
+        } else {
+            view?.setTasksListData(tasks: [])
+            view?.showEmptyView()
+        }
     }
 }
 

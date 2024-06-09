@@ -25,4 +25,23 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 
+    func getFormattedDateString() -> String {
+        let currentDate = Date() 
+        let calendar = Calendar.current
+        // Check if the given date is today
+        if calendar.isDate(self, inSameDayAs: currentDate) {
+            return "Today"
+        }
+        // Check if the given date is yesterday
+        if let yesterday = calendar.date(byAdding: .day, value: -1, to: currentDate), calendar.isDate(self, inSameDayAs: yesterday) {
+            return "Yesterday"
+        }
+        // Check if the given date is tomorrow
+        if let tomorrow = calendar.date(byAdding: .day, value: 1, to: currentDate), calendar.isDate(self, inSameDayAs: tomorrow) {
+            return"Tomorrow"
+        }
+
+        return self.appDateFormat()
+    }
+
 }

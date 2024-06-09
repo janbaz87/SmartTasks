@@ -67,9 +67,6 @@ class VerticalLabelsView: UIView {
 
         // Setup Auto Layout constraints
         NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 12),
-            valueLabel.heightAnchor.constraint(equalToConstant: 17),
-
             // Title label constraints
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
