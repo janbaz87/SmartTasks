@@ -133,17 +133,11 @@ private extension TaskCollecCollectionViewCell {
         ])
     }
 
-
-
-
     enum Constants {
         static let cornerRadius: CGFloat = 5
         static let padding: CGFloat = 10
-        static let height: CGFloat = 80
         static let space: CGFloat = 7
-        static let titleHeight: CGFloat = 16
         static let separatorHeight: CGFloat = 1
-        static let verticalLabelheight: CGFloat = 30
         static let titleFontSize: CGFloat = 15
 
         enum Texts {
