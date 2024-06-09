@@ -11,6 +11,7 @@ import Networking
 protocol TasksListView: AnyObject {
     func setTasksListData(tasks: [SmartTask])
     func showEmptyView()
+    func setTitle(title: String)
 }
 
 final class TasksListViewController: UIViewController, TasksListView {
@@ -79,6 +80,10 @@ final class TasksListViewController: UIViewController, TasksListView {
         ])
     }
 
+    func setTitle(title: String) {
+        self.title = title
+    }
+
     // MARK: - Private
      lazy var collectionViewDataSource = TasksListDataSource(
         collectionView: collectionView,
@@ -93,6 +98,7 @@ private extension TasksListViewController {
         title = Constants.Text.title
         configureCollectionView()
         view.addSubview(collectionView)
+        addLeftRightButtons()
     }
 
     func configureConstraints() {
@@ -111,6 +117,12 @@ private extension TasksListViewController {
         collectionView.dataSource = collectionViewDataSource.dataSource
         collectionView.delegate = collectionViewDataSource
     }
+
+    func addLeftRightButtons() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: SmartImages.rightArrow, style: .plain, target: self, action: #selector(self.nextAction(_:)))
+
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: SmartImages.leftArrow, style: .plain, target: self, action: #selector(self.previousAction(_:)))
+    }
 }
 
 private extension TasksListViewController {
@@ -120,6 +132,16 @@ private extension TasksListViewController {
             TaskCollecCollectionViewCell.self,
             forCellWithReuseIdentifier: TaskCollecCollectionViewCell.reuseIdentifier
         )
+    }
+
+    @objc
+    func previousAction(_ sender: UIButton) {
+        presenter.previousButtonTapped()
+    }
+
+    @objc
+    func nextAction(_ sender: UIButton) {
+        presenter.nextButtonTapped()
     }
 
     enum Constants {
