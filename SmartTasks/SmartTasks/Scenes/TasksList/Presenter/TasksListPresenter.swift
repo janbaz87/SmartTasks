@@ -56,7 +56,6 @@ extension TasksListPresenter: TasksListInteractorOutputing {
     @MainActor
     func successfullyFetchedTasks(tasks: [SmartTask]?) {
         guard let tasks = tasks else { return }
-        print(tasks)
         groupTasksByDate(tasks: tasks)
         DispatchQueue.main.async {
             if let todaysTasks = self.tasksFor(date: self.currentDate) {
