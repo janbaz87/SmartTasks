@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskCollecCollectionViewCell: UICollectionViewCell, ReusableView {
+final class TaskCollecCollectionViewCell: UICollectionViewCell, ReusableView {
     // MARK: - Views
     private lazy var titleLabel: UILabel = {
         let label = UILabel()

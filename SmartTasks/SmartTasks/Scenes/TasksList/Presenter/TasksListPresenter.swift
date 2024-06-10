@@ -13,7 +13,7 @@ protocol TasksListPresentation {
     func previousButtonTapped()
 }
 
-class TasksListPresenter: TasksListPresentation {
+public class TasksListPresenter: TasksListPresentation {
 
     // MARK: - Init
     init (

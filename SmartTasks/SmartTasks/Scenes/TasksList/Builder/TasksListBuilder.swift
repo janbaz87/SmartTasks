@@ -12,7 +12,7 @@ protocol TasksListBuildable {
     func buildTasksList(router: TasksListRouting) -> TasksListViewController
 }
 
-class TasksListBuilder: TasksListBuildable {
+final class TasksListBuilder: TasksListBuildable {
 
     func buildTasksList(router: TasksListRouting) -> TasksListViewController {
         let networking = Networking()
