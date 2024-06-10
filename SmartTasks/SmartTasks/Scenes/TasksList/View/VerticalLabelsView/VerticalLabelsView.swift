@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VerticalLabelsView: UIView {
+final class VerticalLabelsView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical

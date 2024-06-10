@@ -11,7 +11,7 @@ protocol TasksListRouting {
     func showTasksListView(on window: UIWindow)
 }
 
-class TasksListRouter: TasksListRouting {
+final class TasksListRouter: TasksListRouting {
 
     // MARK: - Private
     private var viewController: UIViewController?

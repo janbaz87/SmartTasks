@@ -17,7 +17,7 @@ protocol TasksListInteractorOutputing: AnyObject {
     func failedToFetchTasks()
 }
 
-class TasksListInteractor: TasksListInteractorInputing {
+final class TasksListInteractor: TasksListInteractorInputing {
 
     // MARK: - Init
     init(service: TasksServiceProviding) {
