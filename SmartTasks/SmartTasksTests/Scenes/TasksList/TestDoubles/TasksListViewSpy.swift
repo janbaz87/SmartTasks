@@ -10,6 +10,8 @@ import Foundation
 
 // Mock TasksListView
 final class TasksListViewSpy: TasksListView {
+
+    
     var setTitleCount = 0
     var setTitleCalled = false
     var setTasksListDataCalled = false
@@ -34,4 +36,6 @@ final class TasksListViewSpy: TasksListView {
     func removeTasksListData() {
         removeTasksListDataCalled = true
     }
+
+    func showErrorAlert(with title: String, message: String) {}
 }
