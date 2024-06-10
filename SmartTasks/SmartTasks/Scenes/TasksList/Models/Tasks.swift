@@ -50,6 +50,14 @@ struct SmartTask: Hashable {
 struct Tasks {
     var tasks: [SmartTask] = []
 
+    static var mock: Tasks {
+        Tasks(tasksDTO: TasksListResponse.mock)
+    }
+
+    static var emptyMock: Tasks {
+        Tasks(tasksDTO: TasksListResponse.emptyMock)
+    }
+
     // MARK: - Init
     init(tasksDTO: TasksListResponse) {
         for taskDTO in tasksDTO.tasks {

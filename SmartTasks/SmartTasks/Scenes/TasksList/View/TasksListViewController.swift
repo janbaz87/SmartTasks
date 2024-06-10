@@ -12,6 +12,8 @@ protocol TasksListView: AnyObject {
     func setTasksListData(tasks: [SmartTask])
     func showEmptyView()
     func setTitle(title: String)
+    func removeTasksListData()
+    func showErrorAlert(with title: String, message: String)
 }
 
 final class TasksListViewController: UIViewController, TasksListView {
@@ -66,8 +68,16 @@ final class TasksListViewController: UIViewController, TasksListView {
     let presenter: TasksListPresentation
 
     func setTasksListData(tasks: [SmartTask]) {
-        emptyView.removeFromSuperview()
-        collectionViewDataSource.tasks = tasks
+        self.emptyView.removeFromSuperview()
+        self.collectionViewDataSource.tasks = tasks
+    }
+
+    func removeTasksListData() {
+        self.collectionViewDataSource.tasks = []
+    }
+
+    func showErrorAlert(with title: String, message: String) {
+        showAlert(title: title, message: message)
     }
 
     func showEmptyView() {
@@ -153,7 +163,6 @@ private extension TasksListViewController {
 
 extension TasksListViewController: ActionableListView {
     func didPerformAction(indexPath: IndexPath) {
-       // let task = collectionViewDataSource.getItem(at: indexPath)
-       // presenter.didSelect(currency: curency)
+        // TODO: - implement cell selection
     }
 }
