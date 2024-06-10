@@ -58,33 +58,22 @@ class TasksListPresenter: TasksListPresentation {
     // MARK: - Private
     private let interactor: TasksListInteractorInputing
     private let router: TasksListRouting
-    private var currentDate = Date()
+    private var currentDate = Calendar.current.startOfDay(for: Date())
     private var groupedTasks = [Date: [SmartTask]]()
-
-    private func tasksFor(date: Date) -> [SmartTask]? {
-        return groupedTasks[date]
-    }
-
-    private func groupTasksByDate(tasks: [SmartTask]) {
-        for task in tasks {
-            let startOfDay = Calendar.current.startOfDay(for: task.targetDate)
-            if groupedTasks[startOfDay] == nil {
-                groupedTasks[startOfDay] = [SmartTask]()
-            }
-            groupedTasks[startOfDay]?.append(task)
-        }
-    }
 }
 
 // MARK: - TasksListInteractorOutputing
 extension TasksListPresenter: TasksListInteractorOutputing {
     @MainActor
+    func failedToFetchTasks() {
+        view?.showErrorAlert(with: Constants.Text.appName, message: Constants.Text.errorMessage)
+    }
+    
+    @MainActor
     func successfullyFetchedTasks(tasks: [SmartTask]?) {
         guard let tasks = tasks else { return }
         groupTasksByDate(tasks: tasks)
-        DispatchQueue.main.async {
-            self.reloadUI(for: self.currentDate)
-        }
+        reloadUI(for: currentDate)
     }
 }
 
@@ -94,31 +83,45 @@ private extension TasksListPresenter {
         interactor.fetchTasksList()
     }
 
-    private func nextDate(from dates: [Date], currentDate: Date) -> Date? {
+    func nextDate(from dates: [Date], currentDate: Date) -> Date? {
         let currentDate = currentDate
         let futureDates = dates.filter { $0 > currentDate }
         let sortedFutureDates = futureDates.sorted()
         return sortedFutureDates.first
     }
 
-    private func previousDate(from dates: [Date], currentDate: Date) -> Date? {
+    func previousDate(from dates: [Date], currentDate: Date) -> Date? {
         let currentDate = currentDate
         let futureDates = dates.filter { $0 < currentDate }
         let sortedFutureDates = futureDates.sorted()
         return sortedFutureDates.last
     }
 
-    private func updateTitleWith(date: Date) {
+    func updateTitleWith(date: Date) {
         view?.setTitle(title: date.getFormattedDateString())
     }
 
-    private func reloadUI(for date: Date) {
-        updateTitleWith(date: currentDate)
+    func reloadUI(for date: Date) {
+        self.updateTitleWith(date: self.currentDate)
         if let tasks = self.tasksFor(date: date) {
-            view?.setTasksListData(tasks: tasks)
+            self.view?.setTasksListData(tasks: tasks)
         } else {
-            view?.setTasksListData(tasks: [])
-            view?.showEmptyView()
+            self.view?.removeTasksListData()
+            self.view?.showEmptyView()
+        }
+    }
+
+    func tasksFor(date: Date) -> [SmartTask]? {
+        return groupedTasks[date]
+    }
+
+    func groupTasksByDate(tasks: [SmartTask]) {
+        for task in tasks {
+            let startOfDay = Calendar.current.startOfDay(for: task.targetDate)
+            if groupedTasks[startOfDay] == nil {
+                groupedTasks[startOfDay] = [SmartTask]()
+            }
+            groupedTasks[startOfDay]?.append(task)
         }
     }
 }

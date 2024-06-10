@@ -11,7 +11,10 @@ protocol TasksListInteractorInputing {
     func fetchTasksList()
 }
 protocol TasksListInteractorOutputing: AnyObject {
+    @MainActor
     func successfullyFetchedTasks(tasks: [SmartTask]?)
+    @MainActor
+    func failedToFetchTasks()
 }
 
 class TasksListInteractor: TasksListInteractorInputing {
@@ -33,9 +36,10 @@ class TasksListInteractor: TasksListInteractorInputing {
 
             switch result {
             case .success(let tasks):
-                output?.successfullyFetchedTasks(tasks: tasks?.tasks)
+                await output?.successfullyFetchedTasks(tasks: tasks?.tasks)
             case .failure(let error):
-                print("api success /n \(error)")
+                await output?.failedToFetchTasks()
+                print("api error /n \(error)")
             }
         }
     }
