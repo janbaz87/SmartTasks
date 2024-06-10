@@ -67,6 +67,11 @@
 		DF7ED3CE2C13919B00F58555 /* SmartImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3CD2C13919B00F58555 /* SmartImages.swift */; };
 		DF7ED3D12C1392BB00F58555 /* ImageProvideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ED3D02C1392BB00F58555 /* ImageProvideable.swift */; };
 		DFAA1EAD2C16426E0087923F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA1EAC2C16426E0087923F /* Date+Extensions.swift */; };
+		DFC2C4432C167691007BF240 /* TasksListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2C4422C167691007BF240 /* TasksListPresenterTests.swift */; };
+		DFC2C4462C167893007BF240 /* TasksListViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2C4452C167893007BF240 /* TasksListViewSpy.swift */; };
+		DFC2C4482C1678CD007BF240 /* TasksListInteractorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2C4472C1678CD007BF240 /* TasksListInteractorStub.swift */; };
+		DFC2C44A2C173768007BF240 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2C4492C173768007BF240 /* UIViewController+Extensions.swift */; };
+		DFC2C44D2C173A4E007BF240 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2C44C2C173A4E007BF240 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +182,11 @@
 		DF7ED3CD2C13919B00F58555 /* SmartImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartImages.swift; sourceTree = "<group>"; };
 		DF7ED3D02C1392BB00F58555 /* ImageProvideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvideable.swift; sourceTree = "<group>"; };
 		DFAA1EAC2C16426E0087923F /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		DFC2C4422C167691007BF240 /* TasksListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListPresenterTests.swift; sourceTree = "<group>"; };
+		DFC2C4452C167893007BF240 /* TasksListViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewSpy.swift; sourceTree = "<group>"; };
+		DFC2C4472C1678CD007BF240 /* TasksListInteractorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListInteractorStub.swift; sourceTree = "<group>"; };
+		DFC2C4492C173768007BF240 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		DFC2C44C2C173A4E007BF240 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +391,7 @@
 		DF6092252C13CEBC0050C449 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DFC2C44B2C173A3E007BF240 /* Constants */,
 				DF6092262C13CEC40050C449 /* AppError */,
 			);
 			path = Common;
@@ -484,6 +495,7 @@
 		DF7ED37C2C12591100F58555 /* SmartTasksTests */ = {
 			isa = PBXGroup;
 			children = (
+				DFC2C43F2C16764A007BF240 /* Scenes */,
 				DF7ED37D2C12591100F58555 /* SmartTasksTests.swift */,
 			);
 			path = SmartTasksTests;
@@ -564,6 +576,7 @@
 				DF6092362C1501120050C449 /* UIStackView+Extensions.swift */,
 				DF6092412C1514490050C449 /* UICollectionViewCompositionalLayout+Extensions.swift */,
 				DFAA1EAC2C16426E0087923F /* Date+Extensions.swift */,
+				DFC2C4492C173768007BF240 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -671,6 +684,48 @@
 				DF7ED3D02C1392BB00F58555 /* ImageProvideable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DFC2C43F2C16764A007BF240 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DFC2C4402C167657007BF240 /* TasksList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DFC2C4402C167657007BF240 /* TasksList */ = {
+			isa = PBXGroup;
+			children = (
+				DFC2C4442C1677FE007BF240 /* TestDoubles */,
+				DFC2C4412C167664007BF240 /* Presenter */,
+			);
+			path = TasksList;
+			sourceTree = "<group>";
+		};
+		DFC2C4412C167664007BF240 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DFC2C4422C167691007BF240 /* TasksListPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DFC2C4442C1677FE007BF240 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				DFC2C4452C167893007BF240 /* TasksListViewSpy.swift */,
+				DFC2C4472C1678CD007BF240 /* TasksListInteractorStub.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		DFC2C44B2C173A3E007BF240 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DFC2C44C2C173A4E007BF240 /* Constants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -882,6 +937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF6092372C1501120050C449 /* UIStackView+Extensions.swift in Sources */,
+				DFC2C44D2C173A4E007BF240 /* Constants.swift in Sources */,
 				DF7ED3A62C12616700F58555 /* SmartFonts.swift in Sources */,
 				DF7ED3C22C13203100F58555 /* SmartColors.swift in Sources */,
 				DF7ED3D12C1392BB00F58555 /* ImageProvideable.swift in Sources */,
@@ -909,6 +965,7 @@
 				DF60923D2C150D250050C449 /* TasksListDataSource.swift in Sources */,
 				DF7ED3BF2C1273F100F58555 /* TasksListBuilder.swift in Sources */,
 				DF6092402C150E450050C449 /* CollectionViewDataSource.swift in Sources */,
+				DFC2C44A2C173768007BF240 /* UIViewController+Extensions.swift in Sources */,
 				DF60922D2C1473100050C449 /* String+Extensions.swift in Sources */,
 				DF60921C2C13CCA90050C449 /* TasksListRequest.swift in Sources */,
 				DF7ED3B92C1273B300F58555 /* TasksListInteractor.swift in Sources */,
@@ -920,7 +977,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFC2C4462C167893007BF240 /* TasksListViewSpy.swift in Sources */,
 				DF7ED37E2C12591100F58555 /* SmartTasksTests.swift in Sources */,
+				DFC2C4432C167691007BF240 /* TasksListPresenterTests.swift in Sources */,
+				DFC2C4482C1678CD007BF240 /* TasksListInteractorStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
