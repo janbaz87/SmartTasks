@@ -10,9 +10,13 @@ import Foundation
 struct TasksListResponse: Codable {
     let tasks: [TaskResponse]
 
-//    static var mock: TasksListResponse {
-//        TasksListResponse(tasks: [TaskResponse.mock])
-//    }
+    static var mock: TasksListResponse {
+        TasksListResponse(tasks: TaskResponse.mocks)
+    }
+
+    static var emptyMock: TasksListResponse {
+        TasksListResponse(tasks: TaskResponse.emptyMocks)
+    }
 }
 
 struct TaskResponse: Codable {
@@ -32,14 +36,28 @@ struct TaskResponse: Codable {
         case targetDate = "TargetDate"
     }
 
-//    static var mock: TaskResponse {
-//        TaskResponse(
-//            id: "34",
-//            dueDate: "2024-08-31",
-//            description: "Update Android SDK to the latest version. More info at https://developer.android.com/studiointroupdate",
-//            title: "SDK update",
-//            priority: 3,
-//            targetDate: "2024-08-25"
-//        )
-//    }
+    static var emptyMocks: [TaskResponse] {
+        []
+    }
+
+    static var mocks: [TaskResponse] {
+        [
+            TaskResponse(
+                id: "34",
+                dueDate: "2024-08-14",
+                description: "Update Android SDK to the latest version. More info at https://developer.android.com/studiointroupdate",
+                title: "SDK update",
+                priority: 3,
+                targetDate: "2024-06-10"
+            ),
+            TaskResponse(
+                id: "35",
+                dueDate: "2024-07-14",
+                description: "Update Android SDK to the latest version. More info at https://developer.android.com/studiointroupdate",
+                title: "SDK update",
+                priority: 3,
+                targetDate: "2024-06-11"
+            )
+        ]
+    }
 }
